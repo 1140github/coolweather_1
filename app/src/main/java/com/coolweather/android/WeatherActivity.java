@@ -119,9 +119,8 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     public void requestWeather(final String weatherId){
-        String weatherUrl = "http://guolin.tech/api/weather?cityid=" +
+        final String weatherUrl = "http://guolin.tech/api/weather?cityid=" +
                 weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9";
-        Log.d("WeatherActivity","weatherId="+weatherId);
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback(){
             @Override
             public void onResponse(Call call,Response response) throws IOException{
